@@ -1,0 +1,1 @@
+pandoc -t beamer slides.md -V theme:Warsaw -o slides.pdf
