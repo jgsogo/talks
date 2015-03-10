@@ -16,19 +16,13 @@
 ## Objetivos
 Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variables:
 
-+-------+---------+---------+---------+---------+---------+
 |       | $Var_1$ | $\dots$ | $Var_i$ | $\dots$ | $Var_n$ |
-+=======+=========+=========+=========+=========+=========+
+|-------|---------|---------|---------|---------|---------|
 | $x_1$ | $x_1^1$ | $\dots$ | $x_i^1$ | $\dots$ | $x_n^1$ |
-+-------+---------+---------+---------+---------+---------+
 | $x_1$ | $\dots$ | $\dots$ | $\dots$ | $\dots$ | $\dots$ |
-+-------+---------+---------+---------+---------+---------+
 | $x_j$ | $x_1^j$ | $\dots$ | $x_i^j$ | $\dots$ | $x_n^j$ |
-+-------+---------+---------+---------+---------+---------+
 | $x_1$ | $\dots$ | $\dots$ | $\dots$ | $\dots$ | $\dots$ |
-+-------+---------+---------+---------+---------+---------+
 | $x_N$ | $x_1^N$ | $\dots$ | $x_i^N$ | $\dots$ | $x_n^N$ |
-+-------+---------+---------+---------+---------+---------+
 
  * Encontrar _conglomerados_/grupos/clusters que emerjan naturalmente de los datos.
  * Los elementos de un grupo son _similares_ y pueden ser descritos por características comunes.
