@@ -1,19 +1,21 @@
-!split
-======= Õndice =======
-# Short title: Õndice
+Ôªø% Clasificaci√≥n no supervisada: clustering
+% Javier G. Sogo
+% 10 de marzo de 2015 
 
- * IntroducciÛn
- * Clustering jer·rquico
+# √çndice
+% Short title: √çndice
+
+ * Introducci√≥n
+ * Clustering jer√°rquico
  * Clustering particional
  * Clustering probabilista
  * Conclusiones
  
  
-!split
-======= IntroducciÛn =======
-# Short title: IntroducciÛn
+# Introducci√≥n
+% Short title: Introducci√≥n
 
-!bblock Objetivos
+## Objetivos
 Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variables:
 
 |---c--------c---------c---------c---------c---------c----|
@@ -27,117 +29,99 @@ Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variable
 |---------------------------------------------------------|
 
  * Encontrar _conglomerados_/grupos/clusters que emerjan naturalmente de los datos.
- * Los elementos de un grupo son _similares_ y pueden ser descritos por caracterÌsticas comunes.
+ * Los elementos de un grupo son _similares_ y pueden ser descritos por caracter√≠sticas comunes.
  * _Homogeneidad_ dentro de un grupo y _heterogeneidad_ entre grupos.
  * Puede ser considerado un _arte_.
-!eblock
 
 
-!split
-======= IntroducciÛn =======
-# Short title: IntroducciÛn
+# Introducci√≥n =======
+% Short title: Introducci√≥n
 
-!bblock Ejemplos
- * _Marketing_: segmentaciÛn de clientes o usuarios: publicidad, sistemas de recomendaciÛn,...
- * _Textos_: clasificaciÛn de documentos en tem·ticas.
+## Ejemplos
+ * _Marketing_: segmentaci√≥n de clientes o usuarios: publicidad, sistemas de recomendaci√≥n,...
+ * _Textos_: clasificaci√≥n de documentos en tem√°ticas.
  * _Internet_: grupos de usuarios con patrones de comportamiento similares.
-!eblock
 
 
-!split
-======= IntroducciÛn =======
-# Short title: IntroducciÛn
+# Introducci√≥n
+% Short title: Introducci√≥n
 
-!bblock Tipos de clustering
- * _Jer·rquico_: los datos se van agrupando en conjuntos cada vez m·s numerosos hasta que sÛlo queda
+## Tipos de clustering
+ * _Jer√°rquico_: los datos se van agrupando en conjuntos cada vez m√°s numerosos hasta que s√≥lo queda
    uno de ellos que reune a todos los elementos.
- * No jer·rquico:
-   * _Particional_: los elementos se dividen en un n˙mero determinado de grupos (prefijado de antemano)
-   * _Probabilista_: un elemento puede pertenecer a varios grupos simult·neamente con distintas probabilidades. 
-!eblock
+ * No jer√°rquico:
+   * _Particional_: los elementos se dividen en un n√∫mero determinado de grupos (prefijado de antemano)
+   * _Probabilista_: un elemento puede pertenecer a varios grupos simult√°neamente con distintas probabilidades. 
 
 
-!split
-======= IntroducciÛn =======
-# Short title: IntroducciÛn
+# Introducci√≥n
+% Short title: Introducci√≥n
 
-!bblock InterpretaciÛn geomÈtrica
-FIGURE: [img/plot_cluster_comparison_11, width=600 frac=0.7] ComparaciÛn visual de algunos algoritmos de clustering (http://jaquesgrobler.github.io/Online-Scikit-Learn-stat-tut/modules/clustering.html)
- * En general cada observaciÛn ser· un punto en $R^n$
+## Interpretaci√≥n geom√©trica
+[Comparaci√≥n visual de algunos algoritmos de clustering (http://jaquesgrobler.github.io/Online-Scikit-Learn-stat-tut/modules/clustering.html)](img/plot_cluster_comparison_11)
+ * En general cada observaci√≥n ser√° un punto en $R^n$
  * Visualmente resulta poco claro para $n>2$
- * Se considera una herramienta _exploratoria_ para generar hipÛtesis (no las contrasta).
-!eblock
+ * Se considera una herramienta _exploratoria_ para generar hip√≥tesis (no las contrasta).
 
 
-!split
-======= IntroducciÛn =======
-# Short title: IntroducciÛn
+# Introducci√≥n =======
+% Short title: Introducci√≥n
 
-!bblock Pasos
+## Pasos
  o Seleccionar una medida de _distancia_/similaridad adecuada.
- o Elegir la _tÈcnica_ de clustering: jer·rquico, no jer·rquico.
- o Elegir el _mÈtodo/algoritmo_ dentro de la tÈcnica.
- o (Decidir el n˙mero de clusters)
- o _Interpretar_ los resultados (en base a quÈ atributos se ha generado la divisiÛn)
-!eblock
+ o Elegir la _t√©cnica_ de clustering: jer√°rquico, no jer√°rquico.
+ o Elegir el _m√©todo/algoritmo_ dentro de la t√©cnica.
+ o (Decidir el n√∫mero de clusters)
+ o _Interpretar_ los resultados (en base a qu√© atributos se ha generado la divisi√≥n)
 
 
-!split
-======= Clustering jer·rquico =======
-# Short title: Jer·rquico
+# Clustering jer√°rquico =======
+% Short title: Jer√°rquico
 
-!bblock Ascendente o aglomerativo
+## Ascendente o aglomerativo
  * Paso 1: _N_ clusters (cada elementos es un cluster).
- * Paso 2: _N - 1_ clusters (se unen los dos elementos m·s prÛximos).
+ * Paso 2: _N - 1_ clusters (se unen los dos elementos m√°s pr√≥ximos).
  $\dotsv$
  * Paso N: 1 cluster con todos los puntos.
-!eblock
 
-!bblock Descendente o divisivo
-Es el proceso inverso al *clustering jer·rquico ascendente*.
-!eblock
+## Descendente o divisivo
+Es el proceso inverso al *clustering jer√°rquico ascendente*.
 
 
-!split
-======= Clustering ascendente jer·rquico =======
-# Short title: Jer·rquico
+# Clustering ascendente jer√°rquico
+% Short title: Jer√°rquico
 
-!bblock Distancia entre un elemento y un cluster
-El c·lculo de la distancia entre un punto y un cluster puede realizarse de diferentes formas:
- * Enlace simple o vecino m·s prÛximo: mÌnima distancia entre todos los posibles pares de objectos en ambos clusters:
+## Distancia entre un elemento y un cluster
+El c√°lculo de la distancia entre un punto y un cluster puede realizarse de diferentes formas:
+ * Enlace simple o vecino m√°s pr√≥ximo: m√≠nima distancia entre todos los posibles pares de objectos en ambos clusters:
  
 $D(C, C') = min_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
   
- * Enlace completo o vecino m·s lejano: m·xima distancia entre todos los posibles pares.
+ * Enlace completo o vecino m√°s lejano: m√°xima distancia entre todos los posibles pares.
  
 $D(C, C') = max_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
 
  * Enlace medio: media de las distancias de todos los pares.
 
 $D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
-!eblock
 
 
-!split
-======= Clustering ascendente jer·rquico =======
-# Short title: Jer·rquico
+# Clustering ascendente jer√°rquico =======
+% Short title: Jer√°rquico
 
-!bblock Distancia entre un elemento y un cluster
+## Distancia entre un elemento y un cluster
  * Centroide: reemplazar cada cluster por su centroide (unitario) y calcular la distancia entre centroides.
  
 $c^j = \frac{1}{|C|} \sum_{x \in C} x, r = 1,\dots,n$
 $D(C, C') = d(c^j, c'^j)$
 
  * Ward: se calcula la suma total de desviaciones de la media de un cluster y trata de minimizarla. _No es una medida de distancia_.
-!eblock
 
 
-!split
-======= Clustering ascendente jer·rquico =======
-# Short title: Jer·rquico
+# Clustering ascendente jer√°rquico
+% Short title: Jer√°rquico
 
-!bblock Dendograma o ·rbol jer·rquico
-!bslidecell 00 0.4
+## Dendograma o √°rbol jer√°rquico
  * 2, 10, 5, 8, 9, 1, 4, 3, 6, 7
  * (2, 10), 5, 8, 9, 1, 4, 3, 6, 7
  * (2, 10), (5, 8), 9, 1, 4, 3, 6, 7
@@ -148,11 +132,7 @@ $D(C, C') = d(c^j, c'^j)$
  * (2, 10, 5, 8, 9), (1, 4), (3, 6, 7)
  * (2, 10, 5, 8, 9, 1, 4), (3, 6, 7)
  * (2, 10, 5, 8, 9, 1, 4, 3, 6, 7)
-!eslidecell
 
-!bslidecell 01 0.6
-FIGURE: [img/dendrogram_default, width=600 frac=0.7] Dendograma
-!eslidecell
+![Dendograma](img/dendrogram_default)
 
-øDÛnde cortar? Se puede utilizar un *scree-plot* distancia-n∫ clusters
-!eblock
+¬øD√≥nde cortar? Se puede utilizar un *scree-plot* distancia-n¬∫ clusters
