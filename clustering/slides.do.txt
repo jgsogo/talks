@@ -3,7 +3,6 @@
 % 10 de marzo de 2015 
 
 # Índice
-% Short title: Índice
 
  * Introducción
  * Clustering jerárquico
@@ -13,7 +12,6 @@
  
  
 # Introducción
-% Short title: Introducción
 
 ## Objetivos
 Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variables:
@@ -34,8 +32,7 @@ Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variable
  * Puede ser considerado un _arte_.
 
 
-# Introducción =======
-% Short title: Introducción
+# Introducción
 
 ## Ejemplos
  * _Marketing_: segmentación de clientes o usuarios: publicidad, sistemas de recomendación,...
@@ -44,7 +41,6 @@ Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variable
 
 
 # Introducción
-% Short title: Introducción
 
 ## Tipos de clustering
  * _Jerárquico_: los datos se van agrupando en conjuntos cada vez más numerosos hasta que sólo queda
@@ -55,17 +51,15 @@ Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variable
 
 
 # Introducción
-% Short title: Introducción
 
 ## Interpretación geométrica
-[Comparación visual de algunos algoritmos de clustering (http://jaquesgrobler.github.io/Online-Scikit-Learn-stat-tut/modules/clustering.html)](img/plot_cluster_comparison_11)
+[Comparación visual de algunos algoritmos de clustering (http://jaquesgrobler.github.io/Online-Scikit-Learn-stat-tut/modules/clustering.html)](img/plot_cluster_comparison_11.png)
  * En general cada observación será un punto en $R^n$
  * Visualmente resulta poco claro para $n>2$
  * Se considera una herramienta _exploratoria_ para generar hipótesis (no las contrasta).
 
 
-# Introducción =======
-% Short title: Introducción
+# Introducción
 
 ## Pasos
  o Seleccionar una medida de _distancia_/similaridad adecuada.
@@ -75,13 +69,14 @@ Conjunto de casos u objetos, cada uno de ellos caracterizado por varias variable
  o _Interpretar_ los resultados (en base a qué atributos se ha generado la división)
 
 
-# Clustering jerárquico =======
-% Short title: Jerárquico
+# Clustering jerárquico
 
 ## Ascendente o aglomerativo
  * Paso 1: _N_ clusters (cada elementos es un cluster).
  * Paso 2: _N - 1_ clusters (se unen los dos elementos más próximos).
- $\dotsv$
+ 
+$\vdots$
+
  * Paso N: 1 cluster con todos los puntos.
 
 ## Descendente o divisivo
@@ -89,7 +84,6 @@ Es el proceso inverso al *clustering jerárquico ascendente*.
 
 
 # Clustering ascendente jerárquico
-% Short title: Jerárquico
 
 ## Distancia entre un elemento y un cluster
 El cálculo de la distancia entre un punto y un cluster puede realizarse de diferentes formas:
@@ -106,8 +100,7 @@ $D(C, C') = max_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
 $D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
 
 
-# Clustering ascendente jerárquico =======
-% Short title: Jerárquico
+# Clustering ascendente jerárquico
 
 ## Distancia entre un elemento y un cluster
  * Centroide: reemplazar cada cluster por su centroide (unitario) y calcular la distancia entre centroides.
@@ -119,7 +112,6 @@ $D(C, C') = d(c^j, c'^j)$
 
 
 # Clustering ascendente jerárquico
-% Short title: Jerárquico
 
 ## Dendograma o árbol jerárquico
  * 2, 10, 5, 8, 9, 1, 4, 3, 6, 7
@@ -133,6 +125,6 @@ $D(C, C') = d(c^j, c'^j)$
  * (2, 10, 5, 8, 9, 1, 4), (3, 6, 7)
  * (2, 10, 5, 8, 9, 1, 4, 3, 6, 7)
 
-![Dendograma](img/dendrogram_default)
+![Dendograma](img/dendrogram_default.png)
 
 ¿Dónde cortar? Se puede utilizar un *scree-plot* distancia-nº clusters
