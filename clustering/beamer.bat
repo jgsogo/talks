@@ -1,1 +1,1 @@
-pandoc -t beamer slides.md -V theme:Warsaw -o slides.pdf
+pandoc -t beamer -V theme:Warsaw --slide-level=2 --toc -o slides.pdf slides.md 
