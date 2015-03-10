@@ -3,6 +3,7 @@ title: Clustering
 author: Javier G. Sogo
 date: 10 de marzo de 2015 
 subtitle: Clasificación no supervisada
+
 ---
 
 
@@ -52,11 +53,11 @@ Comparación visual de algunos algoritmos de clustering (http://jaquesgrobler.gi
 
 ## Pasos
 
- #. Seleccionar una medida de _distancia_/similaridad adecuada.
- #. Elegir la _técnica_ de clustering: jerárquico, no jerárquico.
- #. Elegir el _método/algoritmo_ dentro de la técnica.
- #. (Decidir el número de clusters)
- #. _Interpretar_ los resultados (en base a qué atributos se ha generado la división)
+ 1. Seleccionar una medida de _distancia_/similaridad adecuada.
+ 2. Elegir la _técnica_ de clustering: jerárquico, no jerárquico.
+ 3. Elegir el _método/algoritmo_ dentro de la técnica.
+ 4. (Decidir el número de clusters)
+ 5. _Interpretar_ los resultados (en base a qué atributos se ha generado la división)
 
 
 # Clustering jerárquico
