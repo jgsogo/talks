@@ -64,6 +64,7 @@ Comparación visual de algunos algoritmos de clustering (http://jaquesgrobler.gi
 # Introducción
 
 ## Pasos
+
  o Seleccionar una medida de _distancia_/similaridad adecuada.
  o Elegir la _técnica_ de clustering: jerárquico, no jerárquico.
  o Elegir el _método/algoritmo_ dentro de la técnica.
@@ -89,17 +90,18 @@ Es el proceso inverso al *clustering jerárquico ascendente*.
 
 ## Distancia entre un elemento y un cluster
 El cálculo de la distancia entre un punto y un cluster puede realizarse de diferentes formas:
+
  * Enlace simple o vecino más próximo: mínima distancia entre todos los posibles pares de objectos en ambos clusters:
  
-$D(C, C') = min_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
+$D(C, C') = min_{x \in C, x' \in C'} d(\mathbf{x},\mathbf{x'})$
   
  * Enlace completo o vecino más lejano: máxima distancia entre todos los posibles pares.
  
-$D(C, C') = max_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
+$D(C, C') = max_{x \in C, x' \in C'} d(\mathbf{x},\mathbf{x'})$
 
  * Enlace medio: media de las distancias de todos los pares.
 
-$D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})$
+$D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'} d(\mathbf{x}, \mathbf{x'})$
 
 
 # Clustering ascendente jerárquico
@@ -108,6 +110,7 @@ $D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'}d(\mathbf{x},\mathbf{x'})
  * Centroide: reemplazar cada cluster por su centroide (unitario) y calcular la distancia entre centroides.
  
 $c^j = \frac{1}{|C|} \sum_{x \in C} x, r = 1,\dots,n$
+
 $D(C, C') = d(c^j, c'^j)$
 
  * Ward: se calcula la suma total de desviaciones de la media de un cluster y trata de minimizarla. _No es una medida de distancia_.
