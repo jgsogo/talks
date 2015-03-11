@@ -34,7 +34,7 @@ Conjunto de casos u objetos, caracterizados por varias variables:
 
 ### Marketing
  * Segmentación de clientes.
- * Sistemas de recomendación: clientes similares... pero también productos similares (clustering por columnas)
+ * Sistemas de recomendación: clientes similares... pero también productos similares (clustering en columnas)
  * Publicidad dirigida, ofertas.
 
 ### Textos
