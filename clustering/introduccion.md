@@ -51,7 +51,7 @@ Conjunto de casos u objetos, caracterizados por varias variables:
    uno de ellos que reune a todos los elementos.
  * No jerárquico:
     * **Particional**: los elementos se dividen en un número determinado de grupos (prefijado de antemano)
-    * **Probabilista**: un elemento puede pertenecer a varios grupos simultáneamente con distintas probabilidades.
+    * **Probabilista**: un elemento puede pertenecer a varios grupos simultáneamente con distintas probabilidades (mixtura de Gaussianas).
 
 
 ## Interpretación geométrica
@@ -87,57 +87,3 @@ Conjunto de casos u objetos, caracterizados por varias variables:
  3. Elegir el **método/algoritmo** dentro de la técnica.
  4. (Decidir el número de clusters)
  5. **Interpretar** los resultados (en base a qué atributos se ha generado la división)
-
-
-# Clustering jerárquico
-
-## Tipos de clustering jerárquico
-
-### Ascendente o aglomerativo
- * Paso 1: _N_ clusters (cada elementos es un cluster).
- * Paso 2: _N - 1_ clusters (se unen los dos elementos más próximos).
- * $\dots$
- * Paso N: _1_ cluster con todos los puntos.
-
-### Descendente o divisivo
-Es el proceso inverso al *clustering jerárquico ascendente*.
-
-
-## Distancia entre un elemento y un cluster
-El cálculo de la distancia entre un punto y un cluster puede realizarse de diferentes formas:
-
- * **Enlace simple** o vecino más próximo: mínima distancia entre todos los posibles pares de objectos en ambos clusters:
-   $D(C, C') = min_{x \in C, x' \in C'} d(\mathbf{x},\mathbf{x'})$
-  
- * **Enlace completo** o vecino más lejano: máxima distancia entre todos los posibles pares.
-   $D(C, C') = max_{x \in C, x' \in C'} d(\mathbf{x},\mathbf{x'})$
-
- * **Enlace medio**: media de las distancias de todos los pares.
-   $D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'} d(\mathbf{x}, \mathbf{x'})$
-
-
-## Distancia entre un elemento y un cluster
- * **Centroide**: reemplazar cada cluster por su centroide (unitario) y calcular la distancia entre centroides.
-   $c^j = \frac{1}{|C|} \sum_{x \in C} x_r^j, \quad r = 1,\dots,n$
-   $D(C, C') = d(c, c')$
-
- * **Ward**: se calcula la suma total de desviaciones de la media de un cluster y trata de minimizarla. **No es una medida de distancia**.
-
-
-## Dendograma o árbol jerárquico
-A       |   B
---------|------------------------------------
- * 2, 10, 5, 8, 9, 1, 4, 3, 6, 7           | ![Dendograma](img/dendrogram_default.png)
- * (2, 10), 5, 8, 9, 1, 4, 3, 6, 7         |
- * (2, 10), (5, 8), 9, 1, 4, 3, 6, 7       |
- * (2, 10), (5, 8), 9, 1, 4, 3, (6, 7)     |
- * (2, 10), (5, 8, 9), 1, 4, 3, (6, 7)     |
- * (2, 10), (5, 8, 9), (1, 4), 3, (6, 7)   |
- * (2, 10, 5, 8, 9), (1, 4), 3, (6, 7)     |
- * (2, 10, 5, 8, 9), (1, 4), (3, 6, 7)     |
- * (2, 10, 5, 8, 9, 1, 4), (3, 6, 7)       |
- * (2, 10, 5, 8, 9, 1, 4, 3, 6, 7)         |
-
-
-
-¿Dónde cortar? Se puede utilizar un *scree-plot* distancia-nº clusters
