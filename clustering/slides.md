@@ -97,7 +97,7 @@ Conjunto de casos u objetos, caracterizados por varias variables:
  * Paso 1: _N_ clusters (cada elementos es un cluster).
  * Paso 2: _N - 1_ clusters (se unen los dos elementos más próximos).
  * $\dots$
- * Paso N: 1 cluster con todos los puntos.
+ * Paso N: _1_ cluster con todos los puntos.
 
 ### Descendente o divisivo
 Es el proceso inverso al *clustering jerárquico ascendente*.
@@ -106,36 +106,38 @@ Es el proceso inverso al *clustering jerárquico ascendente*.
 ## Distancia entre un elemento y un cluster
 El cálculo de la distancia entre un punto y un cluster puede realizarse de diferentes formas:
 
- * Enlace simple o vecino más próximo: mínima distancia entre todos los posibles pares de objectos en ambos clusters:
+ * **Enlace simple** o vecino más próximo: mínima distancia entre todos los posibles pares de objectos en ambos clusters:
    $D(C, C') = min_{x \in C, x' \in C'} d(\mathbf{x},\mathbf{x'})$
   
- * Enlace completo o vecino más lejano: máxima distancia entre todos los posibles pares.
+ * **Enlace completo** o vecino más lejano: máxima distancia entre todos los posibles pares.
    $D(C, C') = max_{x \in C, x' \in C'} d(\mathbf{x},\mathbf{x'})$
 
- * Enlace medio: media de las distancias de todos los pares.
+ * **Enlace medio**: media de las distancias de todos los pares.
    $D(C, C') = \frac{1}{|C||C'|} \sum_{x \in C, x' \in C'} d(\mathbf{x}, \mathbf{x'})$
 
 
 ## Distancia entre un elemento y un cluster
- * Centroide: reemplazar cada cluster por su centroide (unitario) y calcular la distancia entre centroides.
-   $c^j = \frac{1}{|C|} \sum_{x \in C} x, r = 1,\dots,n$
-   $D(C, C') = d(c^j, c'^j)$
+ * **Centroide**: reemplazar cada cluster por su centroide (unitario) y calcular la distancia entre centroides.
+   $c^j = \frac{1}{|C|} \sum_{x \in C} x_r^j, \quad r = 1,\dots,n$
+   $D(C, C') = d(c, c')$
 
- * Ward: se calcula la suma total de desviaciones de la media de un cluster y trata de minimizarla. _No es una medida de distancia_.
+ * **Ward**: se calcula la suma total de desviaciones de la media de un cluster y trata de minimizarla. **No es una medida de distancia**.
 
 
 ## Dendograma o árbol jerárquico
- * 2, 10, 5, 8, 9, 1, 4, 3, 6, 7
- * (2, 10), 5, 8, 9, 1, 4, 3, 6, 7
- * (2, 10), (5, 8), 9, 1, 4, 3, 6, 7
- * (2, 10), (5, 8), 9, 1, 4, 3, (6, 7)
- * (2, 10), (5, 8, 9), 1, 4, 3, (6, 7)
- * (2, 10), (5, 8, 9), (1, 4), 3, (6, 7)
- * (2, 10, 5, 8, 9), (1, 4), 3, (6, 7)
- * (2, 10, 5, 8, 9), (1, 4), (3, 6, 7)
- * (2, 10, 5, 8, 9, 1, 4), (3, 6, 7)
- * (2, 10, 5, 8, 9, 1, 4, 3, 6, 7)
+A       |   B
+--------|------------------------------------
+ * 2, 10, 5, 8, 9, 1, 4, 3, 6, 7           | ![Dendograma](img/dendrogram_default.png)
+ * (2, 10), 5, 8, 9, 1, 4, 3, 6, 7         |
+ * (2, 10), (5, 8), 9, 1, 4, 3, 6, 7       |
+ * (2, 10), (5, 8), 9, 1, 4, 3, (6, 7)     |
+ * (2, 10), (5, 8, 9), 1, 4, 3, (6, 7)     |
+ * (2, 10), (5, 8, 9), (1, 4), 3, (6, 7)   |
+ * (2, 10, 5, 8, 9), (1, 4), 3, (6, 7)     |
+ * (2, 10, 5, 8, 9), (1, 4), (3, 6, 7)     |
+ * (2, 10, 5, 8, 9, 1, 4), (3, 6, 7)       |
+ * (2, 10, 5, 8, 9, 1, 4, 3, 6, 7)         |
 
-![Dendograma](img/dendrogram_default.png)
+
 
 ¿Dónde cortar? Se puede utilizar un *scree-plot* distancia-nº clusters
