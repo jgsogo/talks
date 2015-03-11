@@ -18,7 +18,8 @@ subtitle: Clasificación no supervisada
 
 ### No jerárquico
  * **Muy sensible** a las semillas iniciales.
- * Buena opción: tomar como entrada la solución del jerárquico.
+ * Partitional: tomar como entrada la solución del jerárquico.
+ * Probabilista: inicializar con los clusters del partitional.
 
 
 ## Método
@@ -61,8 +62,7 @@ subtitle: Clasificación no supervisada
     * Usar una medida de distancia que elimina este problema: **Mahalanobis**
 
 \centering{$d(\mathbf{x}, \mathbf{x'}) = ((\mathbf{x} - \mathbf{x'})^T \Sigma^{-1} (\mathbf{x} - \mathbf{x'}))^{1/2} $}
-
-$\Sigma$ es la matriz varianza-covarianza
+\tiny{\quad|| $\Sigma$ es la matriz varianza-covarianza}
 
 ## Medida de distancia
 
@@ -83,3 +83,9 @@ $\Sigma$ es la matriz varianza-covarianza
 ### Interpretación de la solución
  * Etiquetar los clusters utilizando sus centroides.
  * Si los centroides son muy distintos en cierta variable, se puede utilizar ésta para etiquetar.
+
+
+## Ideas
+
+### Ideas
+ *
