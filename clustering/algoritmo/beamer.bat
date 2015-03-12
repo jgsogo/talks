@@ -1,7 +1,8 @@
 pandoc -t beamer -V theme:Darmstadt --slide-level=2 --variable fontsize=9pt --toc -o slides.pdf ^
 introduccion.md ^
 k-means.md ^
-bfr.md
+bfr.md ^
+cure.md
 
 
 :: themes:  Antibes Bergen Berkeley Berlin
