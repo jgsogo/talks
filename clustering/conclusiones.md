@@ -84,8 +84,10 @@ subtitle: Clasificación no supervisada
  * Etiquetar los clusters utilizando sus centroides.
  * Si los centroides son muy distintos en cierta variable, se puede utilizar ésta para etiquetar.
 
+\centering{\includegraphics[height=50px]{img/segmentacion.jpg}}
 
-## Ideas
 
-### Ideas
- *
+## Resultados
+
+### ¿Se parece la realidad a lo que obtenemos?
+\centering{\includegraphics[width=200px]{img/customer.png}}
