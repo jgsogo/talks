@@ -115,3 +115,4 @@ Aceptar en un cluster todos los puntos cuya $MD$ sera menor que un umbral selecc
 ### Combinación de dos clusters del CS
  * Calcular la varianza del cluster combinado: ¡muy rápido puesto que tenemos las variables $N$, $SUM$ y $SUMSQ$ de cada uno!
  * Combinarlos si la varianza del cluster combinado está por debajo de un límite.
+
